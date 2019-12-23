@@ -124,7 +124,8 @@ class _TaggableManager(models.Manager):
         return self.through.lookup_kwargs(self.instance)
 
     @require_instance_manager
-    def add(self, *tags, through_defaults=None):
+    def add(self, *tags, **kwargs):
+        through_defaults = kwargs.pop("through_defaults")
         db = router.db_for_write(self.through, instance=self.instance)
 
         tag_objs = self._to_tag_model_instances(tags)
