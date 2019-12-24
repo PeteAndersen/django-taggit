@@ -1,6 +1,12 @@
 Changelog
 =========
 
+UNRELEASED
+~~~~~~~~~~
+
+* Moved TaggedItemBase.tags_for() to ItemBase.
+* Removed support for end-of-life Django 2.0.
+
 1.1.0 (2019-03-22)
 ~~~~~~~~~~~~~~~~~~
 
