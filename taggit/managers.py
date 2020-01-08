@@ -125,7 +125,7 @@ class _TaggableManager(models.Manager):
 
     @require_instance_manager
     def add(self, *tags, **kwargs):
-        through_defaults = kwargs.pop("through_defaults")
+        through_defaults = kwargs.pop("through_defaults", None)
         tag_kwargs = kwargs.pop('tag_kwargs', {})
 
         db = router.db_for_write(self.through, instance=self.instance)
